@@ -36,6 +36,7 @@
             <input type="file" id="uploadPaper" class="mt-1" accept="application/pdf">
           </div>
           <button type="submit" id="analyzeButton" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 hidden">Analyze Paper</button>
+          <button type="button" id="newFileButton" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-800 mt-4">Analyze New File</button>
         </form>
         <section id="output" class="bg-white p-6 mt-8 mb-10 rounded shadow-lg text-gray-900"></section>
       </div>
@@ -108,6 +109,7 @@
         Findings: State the main findings or results of the research.
         Shortcomings: Identify any limitations or challenges mentioned by the authors.
         Future Work: Highlight any proposed directions for further research.
+        Tools and Programs: List the tools and programs used as mentioned in the paper.
 
         {Paper text}`;
       const paperText = document.getElementById("paper").value;
@@ -193,6 +195,21 @@
         console.error('Error extracting text from PDF', error);
         alert("Oops, we couldn't extract text from this PDF. Please try another file.");
       }
+    });
+
+    document.getElementById("newFileButton").addEventListener("click", () => {
+      document.getElementById("paperTextContainer").classList.add("hidden");
+      document.getElementById("uploadPaper").classList.remove("hidden");
+      document.getElementById("analyzeButton").classList.add("hidden");
+      document.getElementById("output").innerText = "";
+      document.getElementById("paper").value = '';
+      const pdfPreview = document.getElementById("pdfPreview");
+      pdfPreview.innerHTML = '';
+      const pageInfo = document.getElementById("pageInfo");
+      pageInfo.innerText = '';
+      pageInfo.classList.add("hidden");
+      document.getElementById("previousButton").classList.add("hidden");
+      document.getElementById("nextButton").classList.add("hidden");
     });
   </script>
 </body>
