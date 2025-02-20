@@ -23,7 +23,7 @@
 </head>
 <body class="bg-gray-100">
   <div class="container mx-auto py-10 px-4">
-    <h1 class="text-4xl font-bold mb-5">"Syed Rafiq ul Hoda" Research Paper Analyzer Tool</h1>
+    <h1 class="text-4xl font-bold mb-5">"Hoda" Research Paper Analyzer Tool</h1>
     <div class="flex flex-wrap -mx-4">
       <div class="w-full lg:w-1/2 px-4">
         <form id="researchPaperForm" class="bg-white p-6 rounded shadow-lg">
